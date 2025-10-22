@@ -98,6 +98,7 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Documentation
 
+- **[Skin System Guide](docs/SKINS.md)** - Build custom composable workspaces
 - **[MCP Integration Guide](docs/MCP.md)** - Connect and manage MCP servers
 - **[A2A Integration Guide](docs/A2A.md)** - Work with agent-to-agent communication
 - **[AP2 Integration Guide](docs/AP2.md)** - Create and execute AP2 tasks
@@ -116,12 +117,29 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Features in Detail
 
+### Skin System
+Dynamic composable workspaces tailored to your workflow:
+- **14 Component Types**: Chat, code editor, terminal, file browser, iframes, and more
+- **7 Pre-built Templates**: IDE, Chat Station, Analytics, Agent Control, MCP Explorer
+- **Visual Builder**: Create custom layouts with drag-and-drop components
+- **Grid Layouts**: Flexible CSS Grid-based positioning system
+- **Instant Switching**: Switch between skins for different tasks
+- **Persistent State**: Saves your custom skins locally
+
+**Use cases:**
+- **IDE Skin**: Code editor + terminal + file browser + AI chat
+- **Chat Skin**: AI conversation + 2 MCP resource portals for context
+- **Analytics Skin**: Metrics + health monitoring + task tracking
+- **Agent Control**: Multi-agent orchestration and management
+
+**Learn more:** [Skin System Guide](docs/SKINS.md)
+
 ### Dashboard
 The main dashboard provides an at-a-glance view of your AI infrastructure:
 - **Metrics**: Track models, deployments, active agents, and tasks
 - **Quick Actions**: Deploy models, configure agents, run tasks, and view analytics
 - **System Health**: Monitor CPU, memory, and storage
-- **Protocol Widgets**: View MCP servers, A2A agents, and AP2 tasks
+- **Protocol Widgets**: View MCP servers, A2A agents, AP2 tasks, and active skins
 
 ### MCP Integration
 Model Context Protocol (MCP) support includes:

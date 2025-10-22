@@ -6,6 +6,7 @@ import { RecentActivity } from '@/components/dashboard/RecentActivity';
 import { MCPServersWidget } from '@/components/dashboard/MCPServersWidget';
 import { A2AWidget } from '@/components/dashboard/A2AWidget';
 import { AP2Widget } from '@/components/dashboard/AP2Widget';
+import { SkinsWidget } from '@/components/dashboard/SkinsWidget';
 import { Button } from '@/components/ui/Button';
 
 export default function Home() {
@@ -104,10 +105,11 @@ export default function Home() {
         </div>
 
         {/* Protocol Widgets */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-8">
           <MCPServersWidget />
           <A2AWidget />
           <AP2Widget />
+          <SkinsWidget />
         </div>
       </main>
     </div>
