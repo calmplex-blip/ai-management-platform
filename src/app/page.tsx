@@ -3,6 +3,7 @@ import { MetricCard } from '@/components/dashboard/MetricCard';
 import { QuickActions } from '@/components/dashboard/QuickActions';
 import { SystemHealth } from '@/components/dashboard/SystemHealth';
 import { RecentActivity } from '@/components/dashboard/RecentActivity';
+import { MCPServersWidget } from '@/components/dashboard/MCPServersWidget';
 import { Button } from '@/components/ui/Button';
 
 export default function Home() {
@@ -94,10 +95,11 @@ export default function Home() {
           <QuickActions />
         </div>
 
-        {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Three Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
           <SystemHealth />
           <RecentActivity />
+          <MCPServersWidget />
         </div>
       </main>
     </div>
