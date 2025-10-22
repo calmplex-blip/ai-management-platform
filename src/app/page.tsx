@@ -4,6 +4,7 @@ import { QuickActions } from '@/components/dashboard/QuickActions';
 import { SystemHealth } from '@/components/dashboard/SystemHealth';
 import { RecentActivity } from '@/components/dashboard/RecentActivity';
 import { MCPServersWidget } from '@/components/dashboard/MCPServersWidget';
+import { A2AWidget } from '@/components/dashboard/A2AWidget';
 import { Button } from '@/components/ui/Button';
 
 export default function Home() {
@@ -95,11 +96,16 @@ export default function Home() {
           <QuickActions />
         </div>
 
-        {/* Three Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        {/* Widgets Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <SystemHealth />
           <RecentActivity />
+        </div>
+
+        {/* A2A and MCP Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           <MCPServersWidget />
+          <A2AWidget />
         </div>
       </main>
     </div>
