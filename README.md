@@ -6,6 +6,13 @@ A comprehensive enterprise-grade AI management platform built with Next.js, Reac
 ![React](https://img.shields.io/badge/React-19-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
+![CI](https://img.shields.io/badge/CI-GitHub%20Actions-blue)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
+![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Contributor%20Covenant-purple)
+
+[![Tests](https://img.shields.io/badge/E2E%20Tests-98%2B-success)](./e2e)
+[![Documentation](https://img.shields.io/badge/Docs-130KB%2B-informational)](./docs)
 
 ## Overview
 
@@ -63,6 +70,26 @@ npm run dev
 4. **Open your browser:**
 Navigate to [http://localhost:3000](http://localhost:3000)
 
+### Docker Deployment
+
+Run with Docker (production-ready):
+
+```bash
+# Build and run with Docker Compose
+docker-compose up -d
+
+# Or build and run manually
+docker build -t consciousops .
+docker run -p 3000:3000 consciousops
+```
+
+Access at [http://localhost:3000](http://localhost:3000)
+
+For development with hot reload:
+```bash
+docker-compose --profile dev up app-dev
+```
+
 ## Project Structure
 
 ```
@@ -114,6 +141,9 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 | `npm run build` | Build for production |
 | `npm run start` | Start production server |
 | `npm run lint` | Run ESLint for code quality |
+| `npm test` | Run E2E tests with Playwright |
+| `npm run test:ui` | Run tests in interactive UI mode |
+| `npm run test:debug` | Debug tests step-by-step |
 
 ## Features in Detail
 
@@ -203,13 +233,55 @@ ConsciousOps is optimized for modern browsers:
 
 **Note:** MCP STDIO transport requires server-side implementation due to Node.js dependencies. Use SSE or WebSocket transports in the browser.
 
-## Contributing
+## Testing
 
-We welcome contributions! Please see our [Development Guide](docs/DEVELOPMENT.md) for:
-- Code style guidelines
-- Testing requirements
-- Pull request process
-- Issue reporting
+ConsciousOps includes comprehensive E2E testing with Playwright:
+
+```bash
+# Run all tests
+npm test
+
+# Run specific test file
+npx playwright test e2e/dashboard.spec.ts
+
+# Run tests in UI mode
+npm run test:ui
+
+# Debug tests
+npm run test:debug
+```
+
+**Test Coverage:**
+- 98+ comprehensive E2E tests
+- Dashboard functionality (12 tests)
+- MCP integration (16 tests)
+- A2A agents (10 tests)
+- AP2 tasks (12 tests)
+- Skin system (48+ tests)
+- Integration workflows (11 tests)
+
+**Multi-browser Support:**
+- Desktop: Chrome, Firefox, Safari
+- Mobile: Chrome, Safari
+
+See [TESTING.md](docs/TESTING.md) for detailed testing guide.
+
+## Community
+
+### Contributing
+
+We welcome contributions! Please see:
+- **[Contributing Guide](CONTRIBUTING.md)** - Development workflow and guidelines
+- **[Code of Conduct](CODE_OF_CONDUCT.md)** - Community standards
+- **[Security Policy](SECURITY.md)** - Reporting security vulnerabilities
+
+### Getting Help
+
+- **[Documentation](docs/)** - Comprehensive guides and references
+- **[Repository Summary](REPO_SUMMARY.md)** - Complete project overview
+- **[Changelog](CHANGELOG.md)** - Version history and updates
+- **[GitHub Issues](https://github.com/your-org/ai-management-platform/issues)** - Report bugs or request features
+- **[GitHub Discussions](https://github.com/your-org/ai-management-platform/discussions)** - Ask questions and share ideas
 
 ## Roadmap
 

@@ -1,0 +1,115 @@
+version: '3.8'
+
+services:
+  # ConsciousOps Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: consciousops-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - consciousops-network
+
+  # Development version with hot reload
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: consciousops-app-dev
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_APP_URL=http://localhost:3001
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - /app/node_modules
+      - /app/.next
+    restart: unless-stopped
+    networks:
+      - consciousops-network
+    profiles:
+      - dev
+
+  # PostgreSQL Database (for future backend implementation)
+  postgres:
+    image: postgres:15-alpine
+    container_name: consciousops-db
+    environment:
+      - POSTGRES_DB=consciousops
+      - POSTGRES_USER=consciousops
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-changeme}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U consciousops"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - consciousops-network
+    profiles:
+      - backend
+
+  # Redis (for caching and sessions)
+  redis:
+    image: redis:7-alpine
+    container_name: consciousops-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - consciousops-network
+    profiles:
+      - backend
+
+  # Nginx reverse proxy (optional)
+  nginx:
+    image: nginx:alpine
+    container_name: consciousops-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - app
+    restart: unless-stopped
+    networks:
+      - consciousops-network
+    profiles:
+      - production
+
+networks:
+  consciousops-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+    driver: local
+  redis-data:
+    driver: local
