@@ -69,6 +69,12 @@ export const useA2AStore = create<A2AStore>()(
     }),
     {
       name: 'a2a-storage',
+      onRehydrateStorage: () => (state, error) => {
+        if (error) {
+          console.warn('Failed to rehydrate A2A store:', error);
+          localStorage.removeItem('a2a-storage');
+        }
+      }
     }
   )
 );

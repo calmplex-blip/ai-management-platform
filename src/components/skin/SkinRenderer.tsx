@@ -18,7 +18,6 @@ interface SkinRendererProps {
 export function SkinRenderer({ skin, className = '' }: SkinRendererProps) {
   const renderComponent = (component: SkinComponent) => {
     const commonProps = {
-      key: component.id,
       style: {
         gridArea: component.gridArea,
         flex: component.flex,
@@ -33,35 +32,35 @@ export function SkinRenderer({ skin, className = '' }: SkinRendererProps) {
     switch (component.type) {
       case 'chat':
         return (
-          <div {...commonProps}>
+          <div key={component.id} {...commonProps}>
             <ChatComponent {...(component.props || {})} />
           </div>
         );
 
       case 'iframe':
         return (
-          <div {...commonProps}>
+          <div key={component.id} {...commonProps}>
             <IFrameComponent {...(component.props || {})} />
           </div>
         );
 
       case 'code-editor':
         return (
-          <div {...commonProps}>
+          <div key={component.id} {...commonProps}>
             <CodeEditorComponent {...(component.props || {})} />
           </div>
         );
 
       case 'terminal':
         return (
-          <div {...commonProps}>
+          <div key={component.id} {...commonProps}>
             <TerminalComponent {...(component.props || {})} />
           </div>
         );
 
       case 'file-browser':
         return (
-          <div {...commonProps}>
+          <div key={component.id} {...commonProps}>
             <FileBrowserComponent {...(component.props || {})} />
           </div>
         );
@@ -70,7 +69,7 @@ export function SkinRenderer({ skin, className = '' }: SkinRendererProps) {
       case 'mcp-resources':
       case 'mcp-prompts':
         return (
-          <div {...commonProps} className="p-4">
+          <div key={component.id} {...commonProps} className="p-4">
             <div className="h-full flex items-center justify-center bg-gray-50 dark:bg-gray-900 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700">
               <div className="text-center">
                 <div className="text-2xl mb-2">
@@ -89,7 +88,7 @@ export function SkinRenderer({ skin, className = '' }: SkinRendererProps) {
 
       case 'metrics':
         return (
-          <div {...commonProps} className="grid grid-cols-2 gap-4 p-4">
+          <div key={component.id} {...commonProps} className="grid grid-cols-2 gap-4 p-4">
             <MetricCard title="Models" value={12} />
             <MetricCard title="Deployments" value={8} />
             <MetricCard title="Active Agents" value={5} />
@@ -99,7 +98,7 @@ export function SkinRenderer({ skin, className = '' }: SkinRendererProps) {
 
       case 'system-health':
         return (
-          <div {...commonProps}>
+          <div key={component.id} {...commonProps}>
             <SystemHealth />
           </div>
         );
@@ -107,7 +106,7 @@ export function SkinRenderer({ skin, className = '' }: SkinRendererProps) {
       case 'a2a-agents':
       case 'ap2-tasks':
         return (
-          <div {...commonProps} className="p-4">
+          <div key={component.id} {...commonProps} className="p-4">
             <div className="h-full flex items-center justify-center bg-gray-50 dark:bg-gray-900 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700">
               <div className="text-center">
                 <div className="text-2xl mb-2">
@@ -126,7 +125,7 @@ export function SkinRenderer({ skin, className = '' }: SkinRendererProps) {
 
       case 'custom':
         return (
-          <div {...commonProps} className="p-4">
+          <div key={component.id} {...commonProps} className="p-4">
             <div className="h-full flex items-center justify-center bg-gray-50 dark:bg-gray-900 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700">
               <div className="text-center">
                 <div className="text-2xl mb-2">🎨</div>
@@ -143,7 +142,7 @@ export function SkinRenderer({ skin, className = '' }: SkinRendererProps) {
 
       default:
         return (
-          <div {...commonProps} className="p-4">
+          <div key={component.id} {...commonProps} className="p-4">
             <div className="h-full flex items-center justify-center bg-gray-50 dark:bg-gray-900 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700">
               <div className="text-sm text-gray-500">
                 Unknown component: {component.type}

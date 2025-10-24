@@ -38,6 +38,12 @@ export const useMCPStore = create<MCPStore>()(
     }),
     {
       name: 'mcp-servers-storage',
+      onRehydrateStorage: () => (state, error) => {
+        if (error) {
+          console.warn('Failed to rehydrate MCP store:', error);
+          localStorage.removeItem('mcp-servers-storage');
+        }
+      }
     }
   )
 );

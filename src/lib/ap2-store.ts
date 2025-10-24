@@ -69,6 +69,12 @@ export const useAP2Store = create<AP2Store>()(
     }),
     {
       name: 'ap2-storage',
+      onRehydrateStorage: () => (state, error) => {
+        if (error) {
+          console.warn('Failed to rehydrate AP2 store:', error);
+          localStorage.removeItem('ap2-storage');
+        }
+      }
     }
   )
 );

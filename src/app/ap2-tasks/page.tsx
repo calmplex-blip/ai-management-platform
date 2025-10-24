@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Navigation } from '@/components/Navigation';
 import { Button } from '@/components/ui/Button';
 import { TaskCard } from '@/components/ap2/TaskCard';
 import { CreateTaskModal } from '@/components/ap2/CreateTaskModal';
@@ -78,10 +77,8 @@ export default function AP2TasksPage() {
   const stats = ap2Manager.getTaskStatistics();
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Navigation />
-
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen">
+      <div className="p-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
@@ -182,7 +179,7 @@ export default function AP2TasksPage() {
             ))}
           </div>
         )}
-      </main>
+      </div>
 
       {/* Modals */}
       <CreateTaskModal

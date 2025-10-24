@@ -61,23 +61,23 @@ export default function SkinsPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-1">
             Workspace Skins
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-300 text-sm">
             Choose a skin template or create your own custom workspace layout
           </p>
         </div>
 
         {/* Actions */}
-        <div className="flex items-center justify-between mb-6">
-          <div className="flex gap-2">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex gap-1.5">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
                   selectedCategory === category.id
                     ? 'bg-blue-600 text-white'
                     : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
@@ -88,52 +88,52 @@ export default function SkinsPage() {
             ))}
           </div>
 
-          <Button variant="primary" onClick={handleCreateNew}>
+          <Button variant="primary" size="sm" onClick={handleCreateNew}>
             + Create New Skin
           </Button>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 mb-6">
           <Card>
-            <CardContent className="p-4">
-              <div className="text-2xl font-bold text-gray-900 dark:text-white">
+            <CardContent className="p-3">
+              <div className="text-xl font-bold text-gray-900 dark:text-white">
                 {skins.length}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
+              <div className="text-xs text-gray-600 dark:text-gray-400">
                 Total Skins
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
-              <div className="text-2xl font-bold text-gray-900 dark:text-white">
+            <CardContent className="p-3">
+              <div className="text-xl font-bold text-gray-900 dark:text-white">
                 {skins.filter((s) => s.isTemplate).length}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
+              <div className="text-xs text-gray-600 dark:text-gray-400">
                 Templates
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
-              <div className="text-2xl font-bold text-gray-900 dark:text-white">
+            <CardContent className="p-3">
+              <div className="text-xl font-bold text-gray-900 dark:text-white">
                 {skins.filter((s) => !s.isTemplate).length}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
+              <div className="text-xs text-gray-600 dark:text-gray-400">
                 Custom Skins
               </div>
             </CardContent>
           </Card>
 
           <Card>
-            <CardContent className="p-4">
-              <div className="text-2xl font-bold text-gray-900 dark:text-white">
+            <CardContent className="p-3">
+              <div className="text-xl font-bold text-gray-900 dark:text-white">
                 {skins.find((s) => s.id === activeSkinId)?.name || 'None'}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
+              <div className="text-xs text-gray-600 dark:text-gray-400">
                 Active Skin
               </div>
             </CardContent>
@@ -141,16 +141,16 @@ export default function SkinsPage() {
         </div>
 
         {/* Skins Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredSkins.map((skin) => (
             <Card key={skin.id} hover>
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                    <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-1">
                       {skin.name}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                    <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-2">
                       {skin.description}
                     </p>
                   </div>
@@ -162,7 +162,7 @@ export default function SkinsPage() {
 
               <CardContent>
                 {/* Metadata */}
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex items-center gap-2 mb-3">
                   <Badge variant="info">{skin.category}</Badge>
                   {skin.isTemplate && <Badge variant="neutral">Template</Badge>}
                   <span className="text-xs text-gray-500">
@@ -172,11 +172,11 @@ export default function SkinsPage() {
 
                 {/* Tags */}
                 {skin.tags && skin.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-1 mb-4">
+                  <div className="flex flex-wrap gap-1 mb-3">
                     {skin.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-0.5 text-xs rounded bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400"
+                        className="px-1.5 py-0.5 text-xs rounded bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400"
                       >
                         {tag}
                       </span>
@@ -185,7 +185,7 @@ export default function SkinsPage() {
                 )}
 
                 {/* Actions */}
-                <div className="flex gap-2">
+                <div className="flex gap-1.5">
                   <Button
                     variant="primary"
                     size="sm"

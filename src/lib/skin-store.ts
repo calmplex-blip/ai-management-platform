@@ -104,7 +104,20 @@ export const useSkinStore = create<SkinStore>()(
         })),
     }),
     {
-      name: 'skin-store'
+      name: 'skin-store',
+      onRehydrateStorage: () => (state, error) => {
+        if (error) {
+          console.warn('Failed to rehydrate skin store:', error);
+          localStorage.removeItem('skin-store');
+        } else if (state) {
+          // Convert date strings back to Date objects
+          state.skins = state.skins.map(skin => ({
+            ...skin,
+            createdAt: new Date(skin.createdAt),
+            updatedAt: new Date(skin.updatedAt)
+          }));
+        }
+      }
     }
   )
 );

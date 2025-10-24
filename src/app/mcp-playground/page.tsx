@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Navigation } from '@/components/Navigation';
 import { Card, CardHeader, CardContent, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
@@ -91,10 +90,8 @@ export default function MCPPlaygroundPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Navigation />
-
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen">
+      <div className="p-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">MCP Playground</h1>
@@ -225,7 +222,7 @@ export default function MCPPlaygroundPage() {
             )}
           </div>
         )}
-      </main>
+      </div>
     </div>
   );
 }

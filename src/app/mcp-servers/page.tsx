@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Navigation } from '@/components/Navigation';
 import { Button } from '@/components/ui/Button';
 import { MCPServerCard } from '@/components/mcp/MCPServerCard';
 import { AddMCPServerModal } from '@/components/mcp/AddMCPServerModal';
@@ -58,17 +57,15 @@ export default function MCPServersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Navigation />
-
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen">
+      <div className="p-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               MCP Servers
             </h1>
-            <p className="mt-2 text-gray-600 dark:text-gray-400">
+            <p className="mt-2 text-gray-300">
               Manage your Model Context Protocol server connections
             </p>
           </div>
@@ -164,7 +161,7 @@ export default function MCPServersPage() {
             ))}
           </div>
         )}
-      </main>
+      </div>
 
       {/* Modals */}
       <AddMCPServerModal

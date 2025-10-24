@@ -1,0 +1,236 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - link "ConsciousOps" [ref=e8] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e9]:
+            - link "Dashboard" [ref=e10] [cursor=pointer]:
+              - /url: /
+            - link "Models" [ref=e11] [cursor=pointer]:
+              - /url: /models
+            - link "Deployments" [ref=e12] [cursor=pointer]:
+              - /url: /deployments
+            - link "MCP Servers" [ref=e13] [cursor=pointer]:
+              - /url: /mcp-servers
+            - link "MCP Playground" [ref=e14] [cursor=pointer]:
+              - /url: /mcp-playground
+            - link "A2A Agents" [ref=e15] [cursor=pointer]:
+              - /url: /a2a-agents
+            - link "AP2 Tasks" [ref=e16] [cursor=pointer]:
+              - /url: /ap2-tasks
+            - link "Skins" [ref=e17] [cursor=pointer]:
+              - /url: /skins
+            - link "Workspace" [ref=e18] [cursor=pointer]:
+              - /url: /workspace
+        - generic [ref=e19]:
+          - button "View notifications" [ref=e20] [cursor=pointer]:
+            - generic [ref=e21]: View notifications
+            - img [ref=e22]
+          - generic [ref=e25]:
+            - generic [ref=e26]: Admin User
+            - generic [ref=e27]: A
+    - main [ref=e28]:
+      - generic [ref=e29]:
+        - heading "Welcome back, Admin" [level=1] [ref=e30]
+        - paragraph [ref=e31]: Here's what's happening with your AI operations today
+      - generic [ref=e32]:
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - paragraph [ref=e36]: Active Models
+            - paragraph [ref=e37]: "12"
+            - paragraph [ref=e38]: ↑ +2 this week
+          - img [ref=e40]
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - paragraph [ref=e45]: API Requests
+            - paragraph [ref=e46]: 1.2M
+            - paragraph [ref=e47]: ↑ +12.5% from last month
+          - img [ref=e49]
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - paragraph [ref=e54]: Monthly Cost
+            - paragraph [ref=e55]: $4,234
+            - paragraph [ref=e56]: ↑ -8.3% from last month
+          - img [ref=e58]
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - paragraph [ref=e63]: Avg Response Time
+            - paragraph [ref=e64]: 234ms
+            - paragraph [ref=e65]: ↓ +5.2% slower
+          - img [ref=e67]
+      - generic [ref=e70]:
+        - heading "Quick Actions" [level=3] [ref=e72]
+        - generic [ref=e73]:
+          - button "Deploy Model Deploy a new AI model to production" [ref=e74] [cursor=pointer]:
+            - img [ref=e76]
+            - generic [ref=e78]:
+              - heading "Deploy Model" [level=4] [ref=e79]
+              - paragraph [ref=e80]: Deploy a new AI model to production
+          - button "Run Evaluation Test model performance on datasets" [ref=e81] [cursor=pointer]:
+            - img [ref=e83]
+            - generic [ref=e85]:
+              - heading "Run Evaluation" [level=4] [ref=e86]
+              - paragraph [ref=e87]: Test model performance on datasets
+          - button "Monitor Usage View API usage and cost analytics" [ref=e88] [cursor=pointer]:
+            - img [ref=e90]
+            - generic [ref=e92]:
+              - heading "Monitor Usage" [level=4] [ref=e93]
+              - paragraph [ref=e94]: View API usage and cost analytics
+          - button "Manage Teams Configure team access and permissions" [ref=e95] [cursor=pointer]:
+            - img [ref=e97]
+            - generic [ref=e99]:
+              - heading "Manage Teams" [level=4] [ref=e100]
+              - paragraph [ref=e101]: Configure team access and permissions
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - heading "System Health" [level=3] [ref=e105]
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - generic [ref=e109]:
+                - paragraph [ref=e110]: API Gateway
+                - paragraph [ref=e111]: "Uptime: 99.9%"
+              - generic [ref=e113]: Operational
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - paragraph [ref=e116]: Model Inference
+                - paragraph [ref=e117]: "Uptime: 99.8%"
+              - generic [ref=e119]: Operational
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - paragraph [ref=e122]: Data Pipeline
+                - paragraph [ref=e123]: "Uptime: 99.7%"
+              - generic [ref=e125]: Operational
+            - generic [ref=e126]:
+              - generic [ref=e127]:
+                - paragraph [ref=e128]: Authentication
+                - paragraph [ref=e129]: "Uptime: 100%"
+              - generic [ref=e131]: Operational
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - paragraph [ref=e134]: Storage
+                - paragraph [ref=e135]: "Uptime: 98.2%"
+              - generic [ref=e137]: Degraded
+        - generic [ref=e138]:
+          - heading "Recent Activity" [level=3] [ref=e140]
+          - list [ref=e143]:
+            - listitem [ref=e144]:
+              - generic [ref=e151]:
+                - generic [ref=e152]:
+                  - paragraph [ref=e153]: Model deployed gpt-4-turbo
+                  - paragraph [ref=e154]: by Sarah Chen
+                - generic [ref=e155]: 2 minutes ago
+            - listitem [ref=e156]:
+              - generic [ref=e163]:
+                - generic [ref=e164]:
+                  - paragraph [ref=e165]: API key created Production Environment
+                  - paragraph [ref=e166]: by Mike Johnson
+                - generic [ref=e167]: 15 minutes ago
+            - listitem [ref=e168]:
+              - generic [ref=e175]:
+                - generic [ref=e176]:
+                  - paragraph [ref=e177]: Evaluation completed claude-3-opus
+                  - paragraph [ref=e178]: by System
+                - generic [ref=e179]: 1 hour ago
+            - listitem [ref=e180]:
+              - generic [ref=e187]:
+                - generic [ref=e188]:
+                  - paragraph [ref=e189]: Cost alert triggered Monthly budget exceeded 80%
+                  - paragraph [ref=e190]: by System
+                - generic [ref=e191]: 2 hours ago
+            - listitem [ref=e192]:
+              - generic [ref=e198]:
+                - generic [ref=e199]:
+                  - paragraph [ref=e200]: Team member added Alex Rivera
+                  - paragraph [ref=e201]: by Sarah Chen
+                - generic [ref=e202]: 3 hours ago
+      - generic [ref=e203]:
+        - generic [ref=e204]:
+          - generic [ref=e205]:
+            - heading "MCP Servers" [level=3] [ref=e206]
+            - link "View All" [ref=e207] [cursor=pointer]:
+              - /url: /mcp-servers
+              - button "View All" [ref=e208]
+          - generic [ref=e210]:
+            - img [ref=e211]
+            - paragraph [ref=e213]: No MCP servers configured
+            - link "Add Server" [ref=e214] [cursor=pointer]:
+              - /url: /mcp-servers
+              - button "Add Server" [ref=e215]
+        - generic [ref=e216]:
+          - generic [ref=e217]:
+            - heading "A2A Agents" [level=3] [ref=e218]
+            - link "View All" [ref=e219] [cursor=pointer]:
+              - /url: /a2a-agents
+              - button "View All" [ref=e220]
+          - generic [ref=e222]:
+            - img [ref=e223]
+            - paragraph [ref=e225]: No A2A agents configured
+            - link "Add Agent" [ref=e226] [cursor=pointer]:
+              - /url: /a2a-agents
+              - button "Add Agent" [ref=e227]
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - heading "AP2 Tasks" [level=3] [ref=e230]
+            - link "View All" [ref=e231] [cursor=pointer]:
+              - /url: /ap2-tasks
+              - button "View All" [ref=e232]
+          - generic [ref=e234]:
+            - img [ref=e235]
+            - paragraph [ref=e237]: No AP2 tasks created
+            - link "Create Task" [ref=e238] [cursor=pointer]:
+              - /url: /ap2-tasks
+              - button "Create Task" [ref=e239]
+        - generic [ref=e240]:
+          - generic [ref=e242]:
+            - heading "Workspace Skins" [level=3] [ref=e243]
+            - link "View all" [ref=e244] [cursor=pointer]:
+              - /url: /skins
+          - generic [ref=e245]:
+            - generic [ref=e246]:
+              - paragraph [ref=e247]: No active skin. Choose one to get started.
+              - link "Browse Skins" [ref=e248] [cursor=pointer]:
+                - /url: /skins
+                - button "Browse Skins" [ref=e249]
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - generic [ref=e252]: "7"
+                - generic [ref=e253]: Total
+              - generic [ref=e254]:
+                - generic [ref=e255]: "7"
+                - generic [ref=e256]: Templates
+              - generic [ref=e257]:
+                - generic [ref=e258]: "0"
+                - generic [ref=e259]: Custom
+            - generic [ref=e260]: Recent Skins
+            - generic [ref=e261]:
+              - generic [ref=e262] [cursor=pointer]:
+                - generic [ref=e263]:
+                  - generic [ref=e264]: IDE Workspace
+                  - generic [ref=e265]: ide • 4 components
+                - generic [ref=e266]: Open →
+              - generic [ref=e267] [cursor=pointer]:
+                - generic [ref=e268]:
+                  - generic [ref=e269]: AI Chat Station
+                  - generic [ref=e270]: chat • 3 components
+                - generic [ref=e271]: Open →
+              - generic [ref=e272] [cursor=pointer]:
+                - generic [ref=e273]:
+                  - generic [ref=e274]: Analytics Dashboard
+                  - generic [ref=e275]: analytics • 4 components
+                - generic [ref=e276]: Open →
+            - generic [ref=e277]:
+              - link "+ Create New Skin" [ref=e278] [cursor=pointer]:
+                - /url: /skins/builder
+                - button "+ Create New Skin" [ref=e279]
+              - link "Manage All Skins" [ref=e280] [cursor=pointer]:
+                - /url: /skins
+                - button "Manage All Skins" [ref=e281]
+  - button "Open Next.js Dev Tools" [ref=e287] [cursor=pointer]:
+    - img [ref=e288]
+  - alert [ref=e291]
+```
