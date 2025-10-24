@@ -366,6 +366,90 @@ export const SKIN_TEMPLATES: SkinTemplate[] = [
     ],
     theme: 'dark',
   },
+
+  // RPO Recruitment Workspace
+  {
+    templateId: 'rpo-recruitment-template',
+    name: 'RPO Recruitment Hub',
+    description: 'Complete recruitment workspace with candidate tracking, scheduling, and communication',
+    author: 'ConsciousOps',
+    category: 'recruitment',
+    isTemplate: true,
+    tags: ['recruitment', 'rpo', 'hiring', 'candidates', 'interviews'],
+    layout: {
+      type: 'grid',
+      areas: [
+        'spreadsheet spreadsheet integrations integrations',
+        'spreadsheet spreadsheet integrations integrations',
+        'messages messages zoom calendly',
+      ],
+      columns: '1fr 1fr 1fr 1fr',
+      rows: '1fr 1fr 400px',
+      gap: '12px',
+    },
+    components: [
+      {
+        id: 'spreadsheet-1',
+        type: 'spreadsheet',
+        title: 'Candidate Pipeline',
+        gridArea: 'spreadsheet',
+        props: {
+          editable: true,
+          allowUpload: true,
+          trackingStages: ['New', 'Screening', 'Phone Screen', 'Technical Interview', 'Final Interview', 'Offer', 'Hired', 'Rejected'],
+          columns: [
+            { key: 'name', label: 'Name', width: 150 },
+            { key: 'email', label: 'Email', width: 200 },
+            { key: 'phone', label: 'Phone', width: 130 },
+            { key: 'position', label: 'Position', width: 150 },
+            { key: 'stage', label: 'Stage', width: 140 },
+            { key: 'source', label: 'Source', width: 100 },
+            { key: 'dateApplied', label: 'Date Applied', width: 120 },
+            { key: 'notes', label: 'Notes', width: 200 },
+          ],
+        },
+      },
+      {
+        id: 'indeed-1',
+        type: 'indeed',
+        title: 'Indeed Candidates',
+        gridArea: 'integrations',
+        props: {
+          companyId: '',
+          view: 'candidates',
+        },
+      },
+      {
+        id: 'messages-1',
+        type: 'google-messages',
+        title: 'Candidate Communication',
+        gridArea: 'messages',
+        props: {
+          autoRefresh: true,
+        },
+      },
+      {
+        id: 'zoom-1',
+        type: 'zoom',
+        title: 'Interview Scheduling',
+        gridArea: 'zoom',
+        props: {
+          view: 'upcoming',
+        },
+      },
+      {
+        id: 'calendly-1',
+        type: 'calendly',
+        title: 'Calendly',
+        gridArea: 'calendly',
+        props: {
+          url: '',
+          username: '',
+        },
+      },
+    ],
+    theme: 'auto',
+  },
 ];
 
 // Helper to convert template to skin
