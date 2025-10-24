@@ -21,6 +21,8 @@ ConsciousOps is an open-source platform designed to help teams manage, monitor, 
 ### Key Features
 
 - **Enterprise Dashboard** - Real-time metrics, system health monitoring, and quick actions
+- **Dynamic Skin System** - 19 composable components, 8 pre-built templates, visual builder
+- **RPO Recruitment Hub** - Complete hiring workflow with candidate tracking, scheduling, and integrations
 - **MCP Integration** - Connect to and manage Model Context Protocol servers
 - **MCP Playground** - Interactive environment for testing MCP tools, resources, and prompts
 - **A2A Management** - Register agents, send messages, and manage agent-to-agent communication
@@ -126,12 +128,14 @@ docker-compose --profile dev up app-dev
 ## Documentation
 
 - **[Skin System Guide](docs/SKINS.md)** - Build custom composable workspaces
+- **[RPO Quick Start](docs/RPO-QUICKSTART.md)** - Get started with recruitment workflows
 - **[MCP Integration Guide](docs/MCP.md)** - Connect and manage MCP servers
 - **[A2A Integration Guide](docs/A2A.md)** - Work with agent-to-agent communication
 - **[AP2 Integration Guide](docs/AP2.md)** - Create and execute AP2 tasks
 - **[Component Library](docs/COMPONENTS.md)** - Reusable UI components
 - **[Development Guide](docs/DEVELOPMENT.md)** - Contributing and development setup
 - **[API Integration](docs/API-INTEGRATION.md)** - Backend integration guide
+- **[Testing Guide](docs/TESTING.md)** - E2E testing with Playwright
 
 ## Available Scripts
 
@@ -149,8 +153,8 @@ docker-compose --profile dev up app-dev
 
 ### Skin System
 Dynamic composable workspaces tailored to your workflow:
-- **14 Component Types**: Chat, code editor, terminal, file browser, iframes, and more
-- **7 Pre-built Templates**: IDE, Chat Station, Analytics, Agent Control, MCP Explorer
+- **19 Component Types**: Chat, code editor, terminal, spreadsheet, Calendly, Indeed, Zoom, and more
+- **8 Pre-built Templates**: IDE, Chat Station, Analytics, Agent Control, MCP Explorer, RPO Recruitment
 - **Visual Builder**: Create custom layouts with drag-and-drop components
 - **Grid Layouts**: Flexible CSS Grid-based positioning system
 - **Instant Switching**: Switch between skins for different tasks
@@ -161,8 +165,9 @@ Dynamic composable workspaces tailored to your workflow:
 - **Chat Skin**: AI conversation + 2 MCP resource portals for context
 - **Analytics Skin**: Metrics + health monitoring + task tracking
 - **Agent Control**: Multi-agent orchestration and management
+- **RPO Recruitment**: Candidate pipeline + scheduling + sourcing + communication
 
-**Learn more:** [Skin System Guide](docs/SKINS.md)
+**Learn more:** [Skin System Guide](docs/SKINS.md) | [RPO Quick Start](docs/RPO-QUICKSTART.md)
 
 ### Dashboard
 The main dashboard provides an at-a-glance view of your AI infrastructure:
@@ -201,6 +206,31 @@ Agent Protocol 2 (AP2) task management:
 - Event-driven status updates
 
 **Learn more:** [AP2 Integration Guide](docs/AP2.md)
+
+### RPO Recruitment Hub
+Complete recruitment process outsourcing workspace:
+- **Candidate Pipeline**: Spreadsheet with CSV/Excel upload, 8-stage tracking, visual indicators
+- **Calendly Integration**: Embed scheduling pages for automated interview booking
+- **Indeed Integration**: Source candidates, view applications with match scores, manage job postings
+- **Zoom Meetings**: Schedule interviews, join meetings, access recordings
+- **Google Messages**: Communicate with candidates, message threading, unread indicators
+- **Data Export**: Export pipeline to CSV for reporting and backup
+
+**Features:**
+- Upload candidate lists from CSV/Excel files
+- Track candidates through customizable recruitment stages
+- Schedule interviews with Calendly or Zoom
+- Source new candidates from Indeed
+- Communicate via Google Messages
+- Export data for reporting
+
+**Perfect for:**
+- RPO agencies managing multiple clients
+- HR teams tracking hiring pipelines
+- Technical recruiters
+- Staffing agencies
+
+**Learn more:** [RPO Quick Start Guide](docs/RPO-QUICKSTART.md) | [Skin System Guide](docs/SKINS.md)
 
 ## Development
 
