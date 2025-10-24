@@ -65,7 +65,7 @@ You now have a chat interface with two resource portals!
 
 ## Template Skins
 
-ConsciousOps includes 7 pre-built templates:
+ConsciousOps includes 8 pre-built templates:
 
 ### 1. IDE Workspace
 
@@ -225,6 +225,42 @@ ConsciousOps includes 7 pre-built templates:
 - Two code editors side-by-side
 
 **Use case:** Compare files, review changes, or work on related code.
+
+### 8. RPO Recruitment Hub
+
+**Perfect for**: Recruitment Process Outsourcing (RPO) and hiring workflows
+
+**Layout:**
+```
+┌─────────────────┬─────────────────┐
+│                 │                 │
+│  Candidate      │    Indeed       │
+│  Pipeline       │  Integration    │
+│  (Spreadsheet)  │                 │
+├─────────────────┼────────┬────────┤
+│  Google         │  Zoom  │Calendly│
+│  Messages       │Meetings│        │
+└─────────────────┴────────┴────────┘
+```
+
+**Components:**
+- Spreadsheet for candidate tracking
+- Indeed integration for sourcing
+- Google Messages for communication
+- Zoom for video interviews
+- Calendly for scheduling
+
+**Use case:** Complete recruitment workspace with candidate pipeline tracking, interview scheduling, and multi-platform integration.
+
+**Features:**
+- Upload CSV/Excel candidate lists
+- Track candidates through 8 recruitment stages
+- Visual pipeline with color-coded stages
+- Schedule interviews with Calendly
+- Source candidates from Indeed
+- Conduct video interviews via Zoom
+- Communicate via Google Messages
+- Export pipeline data to CSV
 
 ## Creating Custom Skins
 
@@ -435,6 +471,166 @@ Default sandbox policy: `allow-same-origin allow-scripts`
 - **Description**: Manage AP2 tasks
 - **Props**: view, filter
 - **Min Size**: 350px × 400px
+
+#### Calendly Scheduler
+- **Type**: `calendly`
+- **Description**: Embed Calendly for interview scheduling
+- **Props**: url, username, eventType
+- **Min Size**: 320px × 600px
+
+**Features:**
+- Embed Calendly scheduling pages
+- Configure via username or full URL
+- Event type filtering
+- Seamless candidate scheduling
+
+**Example use:**
+```typescript
+{
+  type: 'calendly',
+  props: {
+    username: 'your-calendly-username',
+    eventType: '30min'  // Optional
+  }
+}
+```
+
+#### Indeed Integration
+- **Type**: `indeed`
+- **Description**: Indeed job postings and candidate sourcing
+- **Props**: companyId, view
+- **Min Size**: 400px × 500px
+
+**Views:**
+- **Candidates**: Browse applications with match scores
+- **Jobs**: Manage active job postings
+- **Analytics**: Recruitment metrics
+
+**Features:**
+- View candidate applications
+- Match score indicators
+- Job posting management
+- Recruitment analytics
+- Quick actions (view resume, contact)
+
+**Example use:**
+```typescript
+{
+  type: 'indeed',
+  props: {
+    companyId: 'your-company-id',
+    view: 'candidates'  // or 'jobs' or 'analytics'
+  }
+}
+```
+
+#### Zoom Meetings
+- **Type**: `zoom`
+- **Description**: Schedule and manage Zoom interviews
+- **Props**: meetingId, view
+- **Min Size**: 350px × 450px
+
+**Views:**
+- **Schedule**: Create new Zoom meetings
+- **Upcoming**: View scheduled interviews
+- **Past**: Access recordings and history
+
+**Features:**
+- Schedule interview meetings
+- One-click join functionality
+- Copy meeting links
+- Access past meeting recordings
+- Meeting management
+
+**Example use:**
+```typescript
+{
+  type: 'zoom',
+  props: {
+    view: 'upcoming'  // or 'schedule' or 'past'
+  }
+}
+```
+
+#### Google Messages
+- **Type**: `google-messages`
+- **Description**: Candidate communication via Google Messages
+- **Props**: conversationId, autoRefresh
+- **Min Size**: 350px × 400px
+
+**Features:**
+- Conversation list with unread counts
+- Message threading
+- Send/receive messages
+- Auto-refresh for new messages
+- Contact avatars
+
+**Example use:**
+```typescript
+{
+  type: 'google-messages',
+  props: {
+    autoRefresh: true,
+    conversationId: 'optional-specific-conversation'
+  }
+}
+```
+
+### Data Management
+
+#### Spreadsheet
+- **Type**: `spreadsheet`
+- **Description**: Data grid with CSV/Excel upload and pipeline tracking
+- **Props**: editable, allowUpload, trackingStages, columns
+- **Min Size**: 400px × 300px
+
+**Features:**
+- **CSV/Excel Upload**: Import candidate data instantly
+- **Pipeline Tracking**: Customizable recruitment stages
+- **Inline Editing**: Update data directly in grid
+- **Export to CSV**: Download pipeline data
+- **Visual Stages**: Color-coded stage indicators
+- **Stage Counts**: Real-time pipeline statistics
+- **Manual Entry**: Add candidates directly
+- **Row Actions**: Delete, select, navigate
+
+**Default Stages:**
+- New
+- Screening
+- Interview
+- Offer
+- Hired
+- Rejected
+
+**Customizable columns:**
+- Name, Email, Phone
+- Position, Stage, Source
+- Date Applied, Notes
+- Any custom fields
+
+**Example use:**
+```typescript
+{
+  type: 'spreadsheet',
+  props: {
+    editable: true,
+    allowUpload: true,
+    trackingStages: ['New', 'Screening', 'Phone Screen', 'Technical Interview', 'Final Interview', 'Offer', 'Hired', 'Rejected'],
+    columns: [
+      { key: 'name', label: 'Name', width: 150 },
+      { key: 'email', label: 'Email', width: 200 },
+      { key: 'stage', label: 'Stage', width: 140 }
+    ]
+  }
+}
+```
+
+**Use cases:**
+- Recruitment candidate tracking
+- Sales pipeline management
+- Project task tracking
+- Data entry and management
+- Any tabular data workflow
 
 ### Monitoring
 

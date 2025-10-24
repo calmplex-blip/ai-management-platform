@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Planned
-- Real backend API integration
+- Real backend API integration for recruitment components
 - User authentication and authorization
 - Multi-user support
 - Real-time collaboration features
@@ -16,6 +16,113 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Component configuration UI in builder
 - Skin marketplace/sharing
 - Performance analytics dashboard
+
+## [1.1.0] - 2025-10-24
+
+### Added - RPO Recruitment Features
+
+#### New Components (5 total)
+- **Spreadsheet Component** - Full-featured data grid for candidate tracking
+  - CSV/Excel upload and parsing
+  - Inline cell editing with dropdown stages
+  - Visual pipeline tracking with color-coded stages
+  - Export to CSV functionality
+  - Customizable columns and stages
+  - Real-time pipeline statistics
+  - Add/delete rows manually
+  - Stage indicators: New, Screening, Interview, Offer, Hired, Rejected (customizable)
+
+- **Calendly Integration** - Interview scheduling component
+  - Embed Calendly scheduling pages
+  - Configure via username or full URL
+  - Event type filtering
+  - Seamless iframe integration
+
+- **Indeed Integration** - Job posting and candidate sourcing
+  - Three views: Candidates, Jobs, Analytics
+  - Candidate applications with match scores
+  - Job posting management
+  - Recruitment analytics and metrics
+  - Quick actions for viewing resumes and contacting candidates
+
+- **Zoom Meetings** - Video interview management
+  - Three views: Schedule, Upcoming, Past
+  - Meeting scheduling form
+  - One-click join and copy link
+  - Past meeting recordings access
+  - Meeting management interface
+
+- **Google Messages** - Candidate communication
+  - Conversation list with unread indicators
+  - Message threading interface
+  - Send/receive functionality
+  - Auto-refresh for new messages
+  - Contact avatars
+
+#### New Skin Template
+- **RPO Recruitment Hub** - Complete recruitment workspace
+  - 3-row grid layout with 6 components
+  - Large candidate pipeline spreadsheet (top-left, 2 rows)
+  - Indeed integration (top-right, 2 rows)
+  - Google Messages (bottom-left)
+  - Zoom meetings (bottom-center)
+  - Calendly scheduler (bottom-right)
+  - 8-stage recruitment pipeline
+  - End-to-end hiring workflow support
+
+#### Updated Features
+- Component registry now includes 19 component types (up from 14)
+- Skin templates expanded to 8 (up from 7)
+- Added 'recruitment' category for skins
+- New component type definitions in TypeScript
+- Updated SkinRenderer to handle all new components
+
+#### Documentation
+- Updated SKINS.md with new RPO template and 5 new components
+- Added Data Management section in component library
+- Comprehensive examples and use cases for each component
+- Updated component count throughout documentation
+
+### Technical Details
+
+#### New Files (5 components)
+- `src/components/skin/SpreadsheetComponent.tsx` (269 lines)
+- `src/components/skin/CalendlyComponent.tsx` (52 lines)
+- `src/components/skin/IndeedComponent.tsx` (152 lines)
+- `src/components/skin/ZoomComponent.tsx` (155 lines)
+- `src/components/skin/GoogleMessagesComponent.tsx` (174 lines)
+
+#### Modified Files
+- `src/types/skin.ts` - Added 5 new component types and recruitment category
+- `src/lib/component-registry.ts` - Registered all 5 new components
+- `src/lib/skin-templates.ts` - Added RPO Recruitment Hub template
+- `src/components/skin/SkinRenderer.tsx` - Added rendering for new components
+- `docs/SKINS.md` - Comprehensive documentation updates
+
+#### Features Delivered
+- ✅ Upload CSV/Excel candidate lists with automatic parsing
+- ✅ Track candidates through 8 customizable recruitment stages
+- ✅ Visual color-coded stage indicators with real-time counts
+- ✅ Schedule interviews with Calendly integration
+- ✅ Source candidates from Indeed
+- ✅ Conduct video interviews via Zoom
+- ✅ Communicate with candidates via Google Messages
+- ✅ Export pipeline data to CSV format
+- ✅ Inline editing of all candidate data
+- ✅ Professional recruitment workflow
+
+### Use Cases
+- Recruitment Process Outsourcing (RPO) agencies
+- Corporate HR departments
+- Technical recruiters
+- Hiring managers
+- Talent acquisition teams
+- Staffing agencies
+
+### Known Limitations
+- Current implementations use mock data for demo purposes
+- Real integrations require API keys and backend implementation
+- See API-INTEGRATION.md for production setup guidance
 
 ## [1.0.0] - 2025-10-22
 
