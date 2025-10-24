@@ -13,6 +13,11 @@ export type ComponentType =
   | 'ap2-tasks'
   | 'metrics'
   | 'system-health'
+  | 'spreadsheet'
+  | 'calendly'
+  | 'indeed'
+  | 'zoom'
+  | 'google-messages'
   | 'custom';
 
 export type LayoutType = 'grid' | 'flex' | 'split';
@@ -67,6 +72,37 @@ export interface TerminalComponentProps {
   environment?: Record<string, string>;
 }
 
+// Spreadsheet component props
+export interface SpreadsheetComponentProps {
+  columns?: Array<{ key: string; label: string; width?: number }>;
+  data?: any[];
+  editable?: boolean;
+  allowUpload?: boolean;
+  trackingStages?: string[];
+}
+
+// Integration component props
+export interface CalendlyComponentProps {
+  url?: string;
+  username?: string;
+  eventType?: string;
+}
+
+export interface IndeedComponentProps {
+  companyId?: string;
+  view?: 'jobs' | 'candidates' | 'analytics';
+}
+
+export interface ZoomComponentProps {
+  meetingId?: string;
+  view?: 'schedule' | 'upcoming' | 'past';
+}
+
+export interface GoogleMessagesComponentProps {
+  conversationId?: string;
+  autoRefresh?: boolean;
+}
+
 // Layout configuration
 export interface SkinLayout {
   type: LayoutType;
@@ -84,7 +120,7 @@ export interface Skin {
   name: string;
   description?: string;
   author?: string;
-  category?: 'ide' | 'chat' | 'analytics' | 'monitoring' | 'custom';
+  category?: 'ide' | 'chat' | 'analytics' | 'monitoring' | 'recruitment' | 'custom';
   thumbnail?: string;
   layout: SkinLayout;
   components: SkinComponent[];

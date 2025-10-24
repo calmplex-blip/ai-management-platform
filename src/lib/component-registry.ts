@@ -385,6 +385,160 @@ export const COMPONENT_REGISTRY: Record<ComponentType, ComponentDefinition> = {
     minHeight: '150px',
   },
 
+  spreadsheet: {
+    type: 'spreadsheet',
+    name: 'Spreadsheet',
+    description: 'Data grid with CSV/Excel upload and pipeline tracking',
+    icon: '📊',
+    category: 'custom',
+    defaultProps: {
+      editable: true,
+      allowUpload: true,
+      trackingStages: ['New', 'Screening', 'Interview', 'Offer', 'Hired', 'Rejected'],
+    },
+    configSchema: [
+      {
+        key: 'editable',
+        label: 'Editable',
+        type: 'boolean',
+        default: true,
+      },
+      {
+        key: 'allowUpload',
+        label: 'Allow File Upload',
+        type: 'boolean',
+        default: true,
+      },
+    ],
+    minWidth: '400px',
+    minHeight: '300px',
+  },
+
+  calendly: {
+    type: 'calendly',
+    name: 'Calendly Scheduler',
+    description: 'Embed Calendly for interview scheduling',
+    icon: '📅',
+    category: 'integration',
+    defaultProps: {
+      url: '',
+      username: '',
+    },
+    configSchema: [
+      {
+        key: 'url',
+        label: 'Calendly URL',
+        type: 'text',
+        description: 'Full Calendly scheduling URL',
+      },
+      {
+        key: 'username',
+        label: 'Calendly Username',
+        type: 'text',
+        description: 'Your Calendly username',
+      },
+      {
+        key: 'eventType',
+        label: 'Event Type',
+        type: 'text',
+        description: 'Specific event type to display',
+      },
+    ],
+    minWidth: '320px',
+    minHeight: '600px',
+  },
+
+  indeed: {
+    type: 'indeed',
+    name: 'Indeed Integration',
+    description: 'Indeed job postings and candidate sourcing',
+    icon: '💼',
+    category: 'integration',
+    defaultProps: {
+      view: 'candidates',
+    },
+    configSchema: [
+      {
+        key: 'companyId',
+        label: 'Company ID',
+        type: 'text',
+        description: 'Your Indeed company identifier',
+      },
+      {
+        key: 'view',
+        label: 'View',
+        type: 'select',
+        options: [
+          { label: 'Candidates', value: 'candidates' },
+          { label: 'Job Postings', value: 'jobs' },
+          { label: 'Analytics', value: 'analytics' },
+        ],
+        default: 'candidates',
+      },
+    ],
+    minWidth: '400px',
+    minHeight: '500px',
+  },
+
+  zoom: {
+    type: 'zoom',
+    name: 'Zoom Meetings',
+    description: 'Schedule and manage Zoom interviews',
+    icon: '📹',
+    category: 'integration',
+    defaultProps: {
+      view: 'upcoming',
+    },
+    configSchema: [
+      {
+        key: 'meetingId',
+        label: 'Meeting ID',
+        type: 'text',
+        description: 'Specific Zoom meeting to display',
+      },
+      {
+        key: 'view',
+        label: 'View',
+        type: 'select',
+        options: [
+          { label: 'Schedule Meeting', value: 'schedule' },
+          { label: 'Upcoming Meetings', value: 'upcoming' },
+          { label: 'Past Meetings', value: 'past' },
+        ],
+        default: 'upcoming',
+      },
+    ],
+    minWidth: '350px',
+    minHeight: '450px',
+  },
+
+  'google-messages': {
+    type: 'google-messages',
+    name: 'Google Messages',
+    description: 'Candidate communication via Google Messages',
+    icon: '💬',
+    category: 'communication',
+    defaultProps: {
+      autoRefresh: true,
+    },
+    configSchema: [
+      {
+        key: 'conversationId',
+        label: 'Conversation ID',
+        type: 'text',
+        description: 'Specific conversation to display',
+      },
+      {
+        key: 'autoRefresh',
+        label: 'Auto Refresh',
+        type: 'boolean',
+        default: true,
+      },
+    ],
+    minWidth: '350px',
+    minHeight: '400px',
+  },
+
   custom: {
     type: 'custom',
     name: 'Custom Component',

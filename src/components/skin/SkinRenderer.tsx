@@ -7,6 +7,11 @@ import { IFrameComponent } from './IFrameComponent';
 import { CodeEditorComponent } from './CodeEditorComponent';
 import { TerminalComponent } from './TerminalComponent';
 import { FileBrowserComponent } from './FileBrowserComponent';
+import { SpreadsheetComponent } from './SpreadsheetComponent';
+import { CalendlyComponent } from './CalendlyComponent';
+import { IndeedComponent } from './IndeedComponent';
+import { ZoomComponent } from './ZoomComponent';
+import { GoogleMessagesComponent } from './GoogleMessagesComponent';
 import { MetricCard } from '../dashboard/MetricCard';
 import { SystemHealth } from '../dashboard/SystemHealth';
 
@@ -100,6 +105,41 @@ export function SkinRenderer({ skin, className = '' }: SkinRendererProps) {
         return (
           <div key={component.id} {...commonProps}>
             <SystemHealth />
+          </div>
+        );
+
+      case 'spreadsheet':
+        return (
+          <div {...commonProps}>
+            <SpreadsheetComponent {...(component.props || {})} />
+          </div>
+        );
+
+      case 'calendly':
+        return (
+          <div {...commonProps}>
+            <CalendlyComponent {...(component.props || {})} />
+          </div>
+        );
+
+      case 'indeed':
+        return (
+          <div {...commonProps}>
+            <IndeedComponent {...(component.props || {})} />
+          </div>
+        );
+
+      case 'zoom':
+        return (
+          <div {...commonProps}>
+            <ZoomComponent {...(component.props || {})} />
+          </div>
+        );
+
+      case 'google-messages':
+        return (
+          <div {...commonProps}>
+            <GoogleMessagesComponent {...(component.props || {})} />
           </div>
         );
 
